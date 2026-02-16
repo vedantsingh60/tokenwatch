@@ -130,19 +130,51 @@ monitor.export_report("monthly_report.json", period="month")
 
 ## Supported Models (Feb 2026)
 
+**44 models across 10 providers** — updated Feb 16, 2026.
+
 | Provider | Model | Input/1M | Output/1M |
 |----------|-------|----------|-----------|
-| Anthropic | claude-opus-4-6 | $15.00 | $75.00 |
+| Anthropic | claude-opus-4-6 | $5.00 | $25.00 |
+| Anthropic | claude-opus-4-5 | $5.00 | $25.00 |
 | Anthropic | claude-sonnet-4-5-20250929 | $3.00 | $15.00 |
-| Anthropic | claude-haiku-4-5-20251001 | $0.80 | $4.00 |
+| Anthropic | claude-haiku-4-5-20251001 | $1.00 | $5.00 |
+| OpenAI | gpt-5 | $1.25 | $10.00 |
 | OpenAI | gpt-4o | $2.50 | $10.00 |
 | OpenAI | gpt-4o-mini | $0.15 | $0.60 |
-| OpenAI | o1 | $15.00 | $60.00 |
-| OpenAI | o3-mini | $1.10 | $4.40 |
+| OpenAI | gpt-4.1 | $2.00 | $8.00 |
+| OpenAI | gpt-4.1-mini | $0.40 | $1.60 |
+| OpenAI | gpt-4.1-nano | $0.10 | $0.40 |
+| OpenAI | o3 | $10.00 | $40.00 |
+| OpenAI | o4-mini | $1.10 | $4.40 |
+| Google | gemini-3-pro | $2.00 | $12.00 |
+| Google | gemini-3-flash | $0.50 | $3.00 |
 | Google | gemini-2.5-pro | $1.25 | $10.00 |
-| Google | gemini-2.5-flash | $0.075 | $0.30 |
-| Mistral | mistral-large-2501 | $2.00 | $6.00 |
-| Mistral | mistral-small-2501 | $0.10 | $0.30 |
+| Google | gemini-2.5-flash | $0.30 | $2.50 |
+| Google | gemini-2.5-flash-lite | $0.10 | $0.40 |
+| Google | gemini-2.0-flash | $0.10 | $0.40 |
+| Mistral | mistral-large-2411 | $2.00 | $6.00 |
+| Mistral | mistral-medium-3 | $0.40 | $2.00 |
+| Mistral | mistral-small | $0.10 | $0.30 |
+| Mistral | mistral-nemo | $0.02 | $0.10 |
+| Mistral | devstral-2 | $0.40 | $2.00 |
+| xAI | grok-4 | $3.00 | $15.00 |
+| xAI | grok-3 | $3.00 | $15.00 |
+| xAI | grok-4.1-fast | $0.20 | $0.50 |
+| Kimi | kimi-k2.5 | $0.60 | $3.00 |
+| Kimi | kimi-k2 | $0.60 | $2.50 |
+| Kimi | kimi-k2-turbo | $1.15 | $8.00 |
+| Qwen | qwen3.5-plus | $0.11 | $0.44 |
+| Qwen | qwen3-max | $0.40 | $1.60 |
+| Qwen | qwen3-vl-32b | $0.91 | $3.64 |
+| DeepSeek | deepseek-v3.2 | $0.14 | $0.28 |
+| DeepSeek | deepseek-r1 | $0.55 | $2.19 |
+| DeepSeek | deepseek-v3 | $0.27 | $1.10 |
+| Meta | llama-4-maverick | $0.27 | $0.85 |
+| Meta | llama-4-scout | $0.18 | $0.59 |
+| Meta | llama-3.3-70b | $0.23 | $0.40 |
+| MiniMax | minimax-m2.5 | $0.30 | $1.20 |
+| MiniMax | minimax-m1 | $0.43 | $1.93 |
+| MiniMax | minimax-text-01 | $0.20 | $1.10 |
 
 > To add a custom model: add it to `PROVIDER_PRICING` dict at the top of `tokenwatch.py`.
 
@@ -203,23 +235,34 @@ Helper to auto-record from OpenAI SDK response object.
 
 ## Changelog
 
+### [1.2.1] - 2026-02-16
+
+- 📋 Updated SKILL.md model table to match code: 44 models across 10 providers
+
 ### [1.2.0] - 2026-02-16
+
+- ✨ Added DeepSeek, Meta Llama, MiniMax providers
+- ✨ Expanded to 44 models across 10 providers
+- ✨ Updated all Anthropic/OpenAI/Google/Mistral pricing to Feb 2026 rates
+
+### [1.1.0] - 2026-02-16
+
+- ✨ Added xAI Grok, Kimi (Moonshot), Qwen (Alibaba)
+- ✨ Expanded to 32 models across 7 providers
+
+### [1.0.0] - 2026-02-16
 
 - ✨ Initial release — TokenWatch
 - ✨ Pricing table for 11 models across 5 providers
 - ✨ Budget alerts: daily, weekly, monthly, per-call thresholds
-- ✨ Model cost comparison (sorted cheapest to most expensive)
-- ✨ Cost estimation before making API calls
-- ✨ Optimization suggestions with estimated monthly savings
+- ✨ Model cost comparison, cost estimation, optimization suggestions
 - ✨ Auto-hooks for Anthropic and OpenAI response objects
-- ✨ Dashboard with progress bars and budget status
-- ✨ JSON export for reporting
-- ✨ Local-only storage, zero dependencies, MIT licensed
+- ✨ Dashboard, JSON export, local-only storage, MIT licensed
 
 ---
 
 **Last Updated**: February 16, 2026
-**Current Version**: 1.2.0
+**Current Version**: 1.2.1
 **Status**: Active & Community-Maintained
 
 © 2026 UnisAI Community

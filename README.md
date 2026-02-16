@@ -2,7 +2,7 @@
 
 > Track, optimize, and control your AI API spending. Free and open-source (MIT).
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
+[![Version](https://img.shields.io/badge/version-1.2.1-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-0%2F77-brightgreen)](https://github.com/vedantsingh60/tokenwatch)
 [![ClawhHub](https://img.shields.io/badge/ClawhHub-Token%20Budget%20Monitor-orange)](https://clawhub.ai/unisai/tokenwatch)

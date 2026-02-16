@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TokenWatch v1.2.0
+TokenWatch v1.2.1
 Track, analyze, and optimize token usage and costs across AI providers.
 
 Free and open-source (MIT Licensed)
