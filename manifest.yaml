@@ -1,7 +1,7 @@
 name: "TokenWatch"
 id: "tokenwatch"
-version: "1.1.0"
-description: "Track, analyze, and optimize AI API token costs across 7 providers (Anthropic, OpenAI, Google, Mistral, xAI, Kimi, Qwen) — 32 models. Set budgets, get alerts, compare costs, and get optimization suggestions. Zero dependencies, local-only, MIT licensed."
+version: "1.2.0"
+description: "Track, analyze, and optimize AI API token costs across 10 providers (Anthropic, OpenAI, Google, Mistral, xAI, Kimi, Qwen, DeepSeek, Meta, MiniMax) — 44 models. Set budgets, get alerts, compare costs, and get optimization suggestions. Zero dependencies, local-only, MIT licensed."
 
 homepage: "https://unisai.vercel.app"
 repository: "https://github.com/vedantsingh60/tokenwatch"
@@ -147,7 +147,7 @@ restrictions:
   - "None — MIT Licensed"
 
 changelog:
-  "1.1.0":
+  "1.2.0":
     - "✨ Initial release — TokenWatch"
     - "✨ Pricing table for 11 models across 5 providers (Feb 2026)"
     - "✨ Budget alerts: daily, weekly, monthly, per-call"

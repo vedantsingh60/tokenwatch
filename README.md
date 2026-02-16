@@ -2,7 +2,7 @@
 
 > Track, optimize, and control your AI API spending. Free and open-source (MIT).
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-0%2F77-brightgreen)](https://github.com/vedantsingh60/tokenwatch)
 [![ClawhHub](https://img.shields.io/badge/ClawhHub-Token%20Budget%20Monitor-orange)](https://clawhub.ai/unisai/tokenwatch)
@@ -15,7 +15,7 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 
 - **Cost Tracking** — Record every API call with automatic cost calculation
 - **Budget Alerts** — Set daily/weekly/monthly limits with threshold warnings
-- **Model Comparison** — Compare costs across 32 models before making a call
+- **Model Comparison** — Compare costs across 44 models before making a call
 - **Optimization Suggestions** — Get ranked tips to reduce spend with estimated savings
 - **Dashboard** — Visual spending overview with budget status bars
 - **Provider Hooks** — Auto-record from Anthropic and OpenAI response objects
@@ -24,7 +24,7 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 
 ## Supported Models & Pricing (Feb 2026)
 
-**32 models across 7 providers** — the most comprehensive AI pricing table available.
+**44 models across 10 providers** — the most comprehensive AI pricing table available.
 
 | Provider | Model | Input ($/1M) | Output ($/1M) |
 |----------|-------|-------------|--------------|
@@ -60,6 +60,15 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 | **Qwen** | `qwen3.5-plus` | $0.11 | $0.44 |
 | **Qwen** | `qwen3-max` | $0.40 | $1.60 |
 | **Qwen** | `qwen3-vl-32b` | $0.91 | $3.64 |
+| **DeepSeek** | `deepseek-v3.2` | $0.14 | $0.28 |
+| **DeepSeek** | `deepseek-r1` | $0.55 | $2.19 |
+| **DeepSeek** | `deepseek-v3` | $0.27 | $1.10 |
+| **Meta** | `llama-4-maverick` | $0.27 | $0.85 |
+| **Meta** | `llama-4-scout` | $0.18 | $0.59 |
+| **Meta** | `llama-3.3-70b` | $0.23 | $0.40 |
+| **MiniMax** | `minimax-m2.5` | $0.30 | $1.20 |
+| **MiniMax** | `minimax-m1` | $0.43 | $1.93 |
+| **MiniMax** | `minimax-text-01` | $0.20 | $1.10 |
 
 > Add any custom model to `PROVIDER_PRICING` in `tokenwatch.py` with `{"input": ..., "output": ..., "provider": "..."}` to track it.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TokenWatch v1.1.0
+TokenWatch v1.2.0
 Track, analyze, and optimize token usage and costs across AI providers.
 
 Free and open-source (MIT Licensed)
@@ -14,6 +14,9 @@ Supported providers and their latest models (Feb 2026):
   xAI:        grok-4, grok-3, grok-4.1-fast
   Kimi:       kimi-k2.5, kimi-k2, kimi-k2-turbo
   Qwen:       qwen3.5-plus, qwen3-max, qwen3-vl-32b
+  DeepSeek:   deepseek-v3.2, deepseek-r1, deepseek-v3
+  Meta:       llama-4-maverick, llama-4-scout, llama-3.3-70b
+  MiniMax:    minimax-m2.5, minimax-m1, minimax-text-01
 """
 
 import json
@@ -75,6 +78,21 @@ PROVIDER_PRICING: Dict[str, Dict] = {
     "qwen3.5-plus":                 {"input": 0.11,  "output": 0.44,  "provider": "qwen"},
     "qwen3-max":                    {"input": 0.40,  "output": 1.60,  "provider": "qwen"},
     "qwen3-vl-32b":                 {"input": 0.91,  "output": 3.64,  "provider": "qwen"},
+
+    # ── DeepSeek ───────────────────────────────────────────────────────────
+    "deepseek-v3.2":                {"input": 0.14,  "output": 0.28,  "provider": "deepseek"},
+    "deepseek-r1":                  {"input": 0.55,  "output": 2.19,  "provider": "deepseek"},
+    "deepseek-v3":                  {"input": 0.27,  "output": 1.10,  "provider": "deepseek"},
+
+    # ── Meta Llama ─────────────────────────────────────────────────────────
+    "llama-4-maverick":             {"input": 0.27,  "output": 0.85,  "provider": "meta"},
+    "llama-4-scout":                {"input": 0.18,  "output": 0.59,  "provider": "meta"},
+    "llama-3.3-70b":                {"input": 0.23,  "output": 0.40,  "provider": "meta"},
+
+    # ── MiniMax ────────────────────────────────────────────────────────────
+    "minimax-m2.5":                 {"input": 0.30,  "output": 1.20,  "provider": "minimax"},
+    "minimax-m1":                   {"input": 0.43,  "output": 1.93,  "provider": "minimax"},
+    "minimax-text-01":              {"input": 0.20,  "output": 1.10,  "provider": "minimax"},
 }
 
 

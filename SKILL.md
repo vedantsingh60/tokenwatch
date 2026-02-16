@@ -203,7 +203,7 @@ Helper to auto-record from OpenAI SDK response object.
 
 ## Changelog
 
-### [1.1.0] - 2026-02-16
+### [1.2.0] - 2026-02-16
 
 - ✨ Initial release — TokenWatch
 - ✨ Pricing table for 11 models across 5 providers
@@ -219,7 +219,7 @@ Helper to auto-record from OpenAI SDK response object.
 ---
 
 **Last Updated**: February 16, 2026
-**Current Version**: 1.1.0
+**Current Version**: 1.2.0
 **Status**: Active & Community-Maintained
 
 © 2026 UnisAI Community
