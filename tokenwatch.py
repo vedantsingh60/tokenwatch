@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TokenWatch v1.2.1
+TokenWatch v1.2.2
 Track, analyze, and optimize token usage and costs across AI providers.
 
 Free and open-source (MIT Licensed)
@@ -8,7 +8,7 @@ No external dependencies. Works locally with any provider.
 
 Supported providers and their latest models (Feb 2026):
   Anthropic:  claude-opus-4-6, claude-opus-4-5, claude-sonnet-4-5-20250929, claude-haiku-4-5-20251001
-  OpenAI:     gpt-5, gpt-4o, gpt-4o-mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, o3, o4-mini
+  OpenAI:     gpt-5.2-pro, gpt-5.2, gpt-5, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, o3, o4-mini
   Google:     gemini-3-pro, gemini-3-flash, gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite, gemini-2.0-flash
   Mistral:    mistral-large-2411, mistral-medium-3, mistral-small, mistral-nemo, devstral-2
   xAI:        grok-4, grok-3, grok-4.1-fast
@@ -40,9 +40,9 @@ PROVIDER_PRICING: Dict[str, Dict] = {
     "claude-haiku-4-5-20251001":    {"input": 1.00,  "output": 5.00,  "provider": "anthropic"},
 
     # ── OpenAI ─────────────────────────────────────────────────────────────
+    "gpt-5.2-pro":                  {"input": 21.00, "output": 168.00,"provider": "openai"},
+    "gpt-5.2":                      {"input": 1.75,  "output": 14.00, "provider": "openai"},
     "gpt-5":                        {"input": 1.25,  "output": 10.00, "provider": "openai"},
-    "gpt-4o":                       {"input": 2.50,  "output": 10.00, "provider": "openai"},
-    "gpt-4o-mini":                  {"input": 0.15,  "output": 0.60,  "provider": "openai"},
     "gpt-4.1":                      {"input": 2.00,  "output": 8.00,  "provider": "openai"},
     "gpt-4.1-mini":                 {"input": 0.40,  "output": 1.60,  "provider": "openai"},
     "gpt-4.1-nano":                 {"input": 0.10,  "output": 0.40,  "provider": "openai"},

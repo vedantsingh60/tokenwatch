@@ -2,7 +2,7 @@
 
 > Track, optimize, and control your AI API spending. Free and open-source (MIT).
 
-[![Version](https://img.shields.io/badge/version-1.2.1-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
+[![Version](https://img.shields.io/badge/version-1.2.2-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-0%2F77-brightgreen)](https://github.com/vedantsingh60/tokenwatch)
 [![ClawhHub](https://img.shields.io/badge/ClawhHub-Token%20Budget%20Monitor-orange)](https://clawhub.ai/unisai/tokenwatch)
@@ -32,9 +32,9 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 | **Anthropic** | `claude-opus-4-5` | $5.00 | $25.00 |
 | **Anthropic** | `claude-sonnet-4-5-20250929` | $3.00 | $15.00 |
 | **Anthropic** | `claude-haiku-4-5-20251001` | $1.00 | $5.00 |
+| **OpenAI** | `gpt-5.2-pro` | $21.00 | $168.00 |
+| **OpenAI** | `gpt-5.2` | $1.75 | $14.00 |
 | **OpenAI** | `gpt-5` | $1.25 | $10.00 |
-| **OpenAI** | `gpt-4o` | $2.50 | $10.00 |
-| **OpenAI** | `gpt-4o-mini` | $0.15 | $0.60 |
 | **OpenAI** | `gpt-4.1` | $2.00 | $8.00 |
 | **OpenAI** | `gpt-4.1-mini` | $0.40 | $1.60 |
 | **OpenAI** | `gpt-4.1-nano` | $0.10 | $0.40 |

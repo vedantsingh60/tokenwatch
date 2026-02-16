@@ -138,9 +138,9 @@ monitor.export_report("monthly_report.json", period="month")
 | Anthropic | claude-opus-4-5 | $5.00 | $25.00 |
 | Anthropic | claude-sonnet-4-5-20250929 | $3.00 | $15.00 |
 | Anthropic | claude-haiku-4-5-20251001 | $1.00 | $5.00 |
+| OpenAI | gpt-5.2-pro | $21.00 | $168.00 |
+| OpenAI | gpt-5.2 | $1.75 | $14.00 |
 | OpenAI | gpt-5 | $1.25 | $10.00 |
-| OpenAI | gpt-4o | $2.50 | $10.00 |
-| OpenAI | gpt-4o-mini | $0.15 | $0.60 |
 | OpenAI | gpt-4.1 | $2.00 | $8.00 |
 | OpenAI | gpt-4.1-mini | $0.40 | $1.60 |
 | OpenAI | gpt-4.1-nano | $0.10 | $0.40 |
@@ -235,7 +235,7 @@ Helper to auto-record from OpenAI SDK response object.
 
 ## Changelog
 
-### [1.2.1] - 2026-02-16
+### [1.2.2] - 2026-02-16
 
 - 📋 Updated SKILL.md model table to match code: 44 models across 10 providers
 
@@ -262,7 +262,7 @@ Helper to auto-record from OpenAI SDK response object.
 ---
 
 **Last Updated**: February 16, 2026
-**Current Version**: 1.2.1
+**Current Version**: 1.2.2
 **Status**: Active & Community-Maintained
 
 © 2026 UnisAI Community
