@@ -130,7 +130,7 @@ monitor.export_report("monthly_report.json", period="month")
 
 ## Supported Models (Feb 2026)
 
-**44 models across 10 providers** — updated Feb 16, 2026.
+**41 models across 10 providers** — updated Feb 16, 2026.
 
 | Provider | Model | Input/1M | Output/1M |
 |----------|-------|----------|-----------|
@@ -235,14 +235,14 @@ Helper to auto-record from OpenAI SDK response object.
 
 ## Changelog
 
-### [1.2.2] - 2026-02-16
+### [1.2.3] - 2026-02-16
 
-- 📋 Updated SKILL.md model table to match code: 44 models across 10 providers
+- 📋 Updated SKILL.md model table to match code: 41 models across 10 providers
 
 ### [1.2.0] - 2026-02-16
 
 - ✨ Added DeepSeek, Meta Llama, MiniMax providers
-- ✨ Expanded to 44 models across 10 providers
+- ✨ Expanded to 41 models across 10 providers
 - ✨ Updated all Anthropic/OpenAI/Google/Mistral pricing to Feb 2026 rates
 
 ### [1.1.0] - 2026-02-16
@@ -262,7 +262,7 @@ Helper to auto-record from OpenAI SDK response object.
 ---
 
 **Last Updated**: February 16, 2026
-**Current Version**: 1.2.2
+**Current Version**: 1.2.3
 **Status**: Active & Community-Maintained
 
 © 2026 UnisAI Community

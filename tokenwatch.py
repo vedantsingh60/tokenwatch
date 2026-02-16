@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TokenWatch v1.2.2
+TokenWatch v1.2.3
 Track, analyze, and optimize token usage and costs across AI providers.
 
 Free and open-source (MIT Licensed)
@@ -630,6 +630,11 @@ def record_from_anthropic_response(monitor: TokenWatch, response, task_label: st
     """
     Auto-record token usage from an Anthropic API response object.
 
+    SECURITY: This function ONLY extracts model name and token counts from the
+    response object. It does NOT access, log, or persist API keys, full response
+    content, or any other metadata. Only `response.model`, `usage.input_tokens`,
+    and `usage.output_tokens` are read.
+
     Usage:
         response = client.messages.create(...)
         record_from_anthropic_response(monitor, response, task_label="summarize doc")
@@ -646,6 +651,11 @@ def record_from_anthropic_response(monitor: TokenWatch, response, task_label: st
 def record_from_openai_response(monitor: TokenWatch, response, task_label: str = None):
     """
     Auto-record token usage from an OpenAI API response object.
+
+    SECURITY: This function ONLY extracts model name and token counts from the
+    response object. It does NOT access, log, or persist API keys, full response
+    content, or any other metadata. Only `response.model`, `usage.prompt_tokens`,
+    and `usage.completion_tokens` are read.
 
     Usage:
         response = client.chat.completions.create(...)

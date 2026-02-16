@@ -2,7 +2,7 @@
 
 > Track, optimize, and control your AI API spending. Free and open-source (MIT).
 
-[![Version](https://img.shields.io/badge/version-1.2.2-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
+[![Version](https://img.shields.io/badge/version-1.2.3-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-0%2F77-brightgreen)](https://github.com/vedantsingh60/tokenwatch)
 [![ClawhHub](https://img.shields.io/badge/ClawhHub-Token%20Budget%20Monitor-orange)](https://clawhub.ai/unisai/tokenwatch)
@@ -15,7 +15,7 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 
 - **Cost Tracking** — Record every API call with automatic cost calculation
 - **Budget Alerts** — Set daily/weekly/monthly limits with threshold warnings
-- **Model Comparison** — Compare costs across 44 models before making a call
+- **Model Comparison** — Compare costs across 41 models before making a call
 - **Optimization Suggestions** — Get ranked tips to reduce spend with estimated savings
 - **Dashboard** — Visual spending overview with budget status bars
 - **Provider Hooks** — Auto-record from Anthropic and OpenAI response objects
@@ -24,7 +24,7 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 
 ## Supported Models & Pricing (Feb 2026)
 
-**44 models across 10 providers** — the most comprehensive AI pricing table available.
+**41 models across 10 providers** — the most comprehensive AI pricing table available.
 
 | Provider | Model | Input ($/1M) | Output ($/1M) |
 |----------|-------|-------------|--------------|
