@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """
-TokenWatch v1.0.0
+TokenWatch v1.1.0
 Track, analyze, and optimize token usage and costs across AI providers.
 
 Free and open-source (MIT Licensed)
 No external dependencies. Works locally with any provider.
 
-Supported providers and their latest models:
-  Anthropic: claude-opus-4-6, claude-sonnet-4-5-20250929, claude-haiku-4-5-20251001
-  OpenAI:    gpt-4o, gpt-4o-mini, o1, o3-mini
-  Google:    gemini-2.5-pro, gemini-2.5-flash
-  Mistral:   mistral-large-2501, mistral-small-2501
-  OpenRouter: any model via proxy
+Supported providers and their latest models (Feb 2026):
+  Anthropic:  claude-opus-4-6, claude-opus-4-5, claude-sonnet-4-5-20250929, claude-haiku-4-5-20251001
+  OpenAI:     gpt-5, gpt-4o, gpt-4o-mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, o3, o4-mini
+  Google:     gemini-3-pro, gemini-3-flash, gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite, gemini-2.0-flash
+  Mistral:    mistral-large-2411, mistral-medium-3, mistral-small, mistral-nemo, devstral-2
+  xAI:        grok-4, grok-3, grok-4.1-fast
+  Kimi:       kimi-k2.5, kimi-k2, kimi-k2-turbo
+  Qwen:       qwen3.5-plus, qwen3-max, qwen3-vl-32b
 """
 
 import json
@@ -24,24 +26,55 @@ from pathlib import Path
 
 # ---------------------------------------------------------------------------
 # Pricing table — cost per 1M tokens (input / output) in USD
-# Updated: February 2026
+# Updated: February 16, 2026
+# Sources: official provider pricing pages
 # ---------------------------------------------------------------------------
 PROVIDER_PRICING: Dict[str, Dict] = {
-    # Anthropic
-    "claude-opus-4-6": {"input": 15.00, "output": 75.00, "provider": "anthropic"},
-    "claude-sonnet-4-5-20250929": {"input": 3.00, "output": 15.00, "provider": "anthropic"},
-    "claude-haiku-4-5-20251001": {"input": 0.80, "output": 4.00, "provider": "anthropic"},
-    # OpenAI
-    "gpt-4o": {"input": 2.50, "output": 10.00, "provider": "openai"},
-    "gpt-4o-mini": {"input": 0.15, "output": 0.60, "provider": "openai"},
-    "o1": {"input": 15.00, "output": 60.00, "provider": "openai"},
-    "o3-mini": {"input": 1.10, "output": 4.40, "provider": "openai"},
-    # Google
-    "gemini-2.5-pro": {"input": 1.25, "output": 10.00, "provider": "google"},
-    "gemini-2.5-flash": {"input": 0.075, "output": 0.30, "provider": "google"},
-    # Mistral
-    "mistral-large-2501": {"input": 2.00, "output": 6.00, "provider": "mistral"},
-    "mistral-small-2501": {"input": 0.10, "output": 0.30, "provider": "mistral"},
+    # ── Anthropic ──────────────────────────────────────────────────────────
+    "claude-opus-4-6":              {"input": 5.00,  "output": 25.00, "provider": "anthropic"},
+    "claude-opus-4-5":              {"input": 5.00,  "output": 25.00, "provider": "anthropic"},
+    "claude-sonnet-4-5-20250929":   {"input": 3.00,  "output": 15.00, "provider": "anthropic"},
+    "claude-haiku-4-5-20251001":    {"input": 1.00,  "output": 5.00,  "provider": "anthropic"},
+
+    # ── OpenAI ─────────────────────────────────────────────────────────────
+    "gpt-5":                        {"input": 1.25,  "output": 10.00, "provider": "openai"},
+    "gpt-4o":                       {"input": 2.50,  "output": 10.00, "provider": "openai"},
+    "gpt-4o-mini":                  {"input": 0.15,  "output": 0.60,  "provider": "openai"},
+    "gpt-4.1":                      {"input": 2.00,  "output": 8.00,  "provider": "openai"},
+    "gpt-4.1-mini":                 {"input": 0.40,  "output": 1.60,  "provider": "openai"},
+    "gpt-4.1-nano":                 {"input": 0.10,  "output": 0.40,  "provider": "openai"},
+    "o3":                           {"input": 10.00, "output": 40.00, "provider": "openai"},
+    "o4-mini":                      {"input": 1.10,  "output": 4.40,  "provider": "openai"},
+
+    # ── Google ─────────────────────────────────────────────────────────────
+    "gemini-3-pro":                 {"input": 2.00,  "output": 12.00, "provider": "google"},
+    "gemini-3-flash":               {"input": 0.50,  "output": 3.00,  "provider": "google"},
+    "gemini-2.5-pro":               {"input": 1.25,  "output": 10.00, "provider": "google"},
+    "gemini-2.5-flash":             {"input": 0.30,  "output": 2.50,  "provider": "google"},
+    "gemini-2.5-flash-lite":        {"input": 0.10,  "output": 0.40,  "provider": "google"},
+    "gemini-2.0-flash":             {"input": 0.10,  "output": 0.40,  "provider": "google"},
+
+    # ── Mistral ────────────────────────────────────────────────────────────
+    "mistral-large-2411":           {"input": 2.00,  "output": 6.00,  "provider": "mistral"},
+    "mistral-medium-3":             {"input": 0.40,  "output": 2.00,  "provider": "mistral"},
+    "mistral-small":                {"input": 0.10,  "output": 0.30,  "provider": "mistral"},
+    "mistral-nemo":                 {"input": 0.02,  "output": 0.10,  "provider": "mistral"},
+    "devstral-2":                   {"input": 0.40,  "output": 2.00,  "provider": "mistral"},
+
+    # ── xAI Grok ───────────────────────────────────────────────────────────
+    "grok-4":                       {"input": 3.00,  "output": 15.00, "provider": "xai"},
+    "grok-3":                       {"input": 3.00,  "output": 15.00, "provider": "xai"},
+    "grok-4.1-fast":                {"input": 0.20,  "output": 0.50,  "provider": "xai"},
+
+    # ── Kimi (Moonshot AI) ─────────────────────────────────────────────────
+    "kimi-k2.5":                    {"input": 0.60,  "output": 3.00,  "provider": "kimi"},
+    "kimi-k2":                      {"input": 0.60,  "output": 2.50,  "provider": "kimi"},
+    "kimi-k2-turbo":                {"input": 1.15,  "output": 8.00,  "provider": "kimi"},
+
+    # ── Qwen (Alibaba) ─────────────────────────────────────────────────────
+    "qwen3.5-plus":                 {"input": 0.11,  "output": 0.44,  "provider": "qwen"},
+    "qwen3-max":                    {"input": 0.40,  "output": 1.60,  "provider": "qwen"},
+    "qwen3-vl-32b":                 {"input": 0.91,  "output": 3.64,  "provider": "qwen"},
 }
 
 

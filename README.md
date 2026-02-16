@@ -2,7 +2,7 @@
 
 > Track, optimize, and control your AI API spending. Free and open-source (MIT).
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/vedantsingh60/tokenwatch/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
 [![VirusTotal](https://img.shields.io/badge/VirusTotal-0%2F77-brightgreen)](https://github.com/vedantsingh60/tokenwatch)
 [![ClawhHub](https://img.shields.io/badge/ClawhHub-Token%20Budget%20Monitor-orange)](https://clawhub.ai/unisai/tokenwatch)
@@ -15,7 +15,7 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 
 - **Cost Tracking** — Record every API call with automatic cost calculation
 - **Budget Alerts** — Set daily/weekly/monthly limits with threshold warnings
-- **Model Comparison** — Compare costs across 11 models before making a call
+- **Model Comparison** — Compare costs across 32 models before making a call
 - **Optimization Suggestions** — Get ranked tips to reduce spend with estimated savings
 - **Dashboard** — Visual spending overview with budget status bars
 - **Provider Hooks** — Auto-record from Anthropic and OpenAI response objects
@@ -24,19 +24,44 @@ Know exactly what you're spending on AI APIs. Set budgets, get alerts before you
 
 ## Supported Models & Pricing (Feb 2026)
 
+**32 models across 7 providers** — the most comprehensive AI pricing table available.
+
 | Provider | Model | Input ($/1M) | Output ($/1M) |
 |----------|-------|-------------|--------------|
-| **Anthropic** | `claude-opus-4-6` | $15.00 | $75.00 |
+| **Anthropic** | `claude-opus-4-6` | $5.00 | $25.00 |
+| **Anthropic** | `claude-opus-4-5` | $5.00 | $25.00 |
 | **Anthropic** | `claude-sonnet-4-5-20250929` | $3.00 | $15.00 |
-| **Anthropic** | `claude-haiku-4-5-20251001` | $0.80 | $4.00 |
+| **Anthropic** | `claude-haiku-4-5-20251001` | $1.00 | $5.00 |
+| **OpenAI** | `gpt-5` | $1.25 | $10.00 |
 | **OpenAI** | `gpt-4o` | $2.50 | $10.00 |
 | **OpenAI** | `gpt-4o-mini` | $0.15 | $0.60 |
-| **OpenAI** | `o1` | $15.00 | $60.00 |
-| **OpenAI** | `o3-mini` | $1.10 | $4.40 |
+| **OpenAI** | `gpt-4.1` | $2.00 | $8.00 |
+| **OpenAI** | `gpt-4.1-mini` | $0.40 | $1.60 |
+| **OpenAI** | `gpt-4.1-nano` | $0.10 | $0.40 |
+| **OpenAI** | `o3` | $10.00 | $40.00 |
+| **OpenAI** | `o4-mini` | $1.10 | $4.40 |
+| **Google** | `gemini-3-pro` | $2.00 | $12.00 |
+| **Google** | `gemini-3-flash` | $0.50 | $3.00 |
 | **Google** | `gemini-2.5-pro` | $1.25 | $10.00 |
-| **Google** | `gemini-2.5-flash` | $0.075 | $0.30 |
-| **Mistral** | `mistral-large-2501` | $2.00 | $6.00 |
-| **Mistral** | `mistral-small-2501` | $0.10 | $0.30 |
+| **Google** | `gemini-2.5-flash` | $0.30 | $2.50 |
+| **Google** | `gemini-2.5-flash-lite` | $0.10 | $0.40 |
+| **Google** | `gemini-2.0-flash` | $0.10 | $0.40 |
+| **Mistral** | `mistral-large-2411` | $2.00 | $6.00 |
+| **Mistral** | `mistral-medium-3` | $0.40 | $2.00 |
+| **Mistral** | `mistral-small` | $0.10 | $0.30 |
+| **Mistral** | `mistral-nemo` | $0.02 | $0.10 |
+| **Mistral** | `devstral-2` | $0.40 | $2.00 |
+| **xAI** | `grok-4` | $3.00 | $15.00 |
+| **xAI** | `grok-3` | $3.00 | $15.00 |
+| **xAI** | `grok-4.1-fast` | $0.20 | $0.50 |
+| **Kimi** | `kimi-k2.5` | $0.60 | $3.00 |
+| **Kimi** | `kimi-k2` | $0.60 | $2.50 |
+| **Kimi** | `kimi-k2-turbo` | $1.15 | $8.00 |
+| **Qwen** | `qwen3.5-plus` | $0.11 | $0.44 |
+| **Qwen** | `qwen3-max` | $0.40 | $1.60 |
+| **Qwen** | `qwen3-vl-32b` | $0.91 | $3.64 |
+
+> Add any custom model to `PROVIDER_PRICING` in `tokenwatch.py` with `{"input": ..., "output": ..., "provider": "..."}` to track it.
 
 ---
 
